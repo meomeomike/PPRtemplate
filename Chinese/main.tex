@@ -1,0 +1,96 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Peking Univ. Physical Review (cn)
+%
+% LaTeX Template
+% Version 2.1
+% Release 03/19/18
+%
+% Original author:
+% Mathias Legrand (legrand.mathias@gmail.com) 
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+%\RequirePackage{times}      % Loads the Times-Roman Fonts
+%\RequirePackage{mathptmx}   % Loads the Times-Roman Math Fonts
+\documentclass[10pt,a4paper,twocolumn]{PPRAcn} % Document font size
+
+\usepackage[UTF8]{ctex}
+\usepackage[english]{babel} % Specify a different language here - english by default
+\usepackage{lipsum} % Required to insert dummy text. To be removed otherwise
+\usepackage{bm,caption,textcomp,subfigure,float}
+\usepackage[keeplastbox]{flushend}
+\usepackage{geometry}
+\newgeometry{top=28mm,bottom=25mm,left=20mm,right=25mm}
+
+\newcommand{\upcite}[1]{\textsuperscript{\textsuperscript{\cite{#1}}}}
+
+%----------------------------------------------------------------------------------------
+%	COLUMNS
+%----------------------------------------------------------------------------------------
+
+\setlength{\columnsep}{7.0mm} % Distance between the two columns of text
+\setlength{\fboxrule}{0.75pt} % Width of the border around the abstract
+\setlength{\abovecaptionskip}{5pt}
+\setlength{\belowcaptionskip}{0pt}
+
+%----------------------------------------------------------------------------------------
+%	COLORS
+%----------------------------------------------------------------------------------------
+
+\definecolor{color1}{RGB}{0,0,90} % Color of the article title and sections
+\definecolor{color2}{RGB}{0,20,20} % Color of the boxes behind the abstract and headings
+
+%----------------------------------------------------------------------------------------
+%	HYPERLINKS
+%----------------------------------------------------------------------------------------
+
+\usepackage{hyperref} % Required for hyperlinks
+\hypersetup{hidelinks,colorlinks,breaklinks=true,urlcolor=color2,citecolor=color1,linkcolor=color1,bookmarksopen=false,pdftitle={Title},pdfauthor={Author}}
+
+%----------------------------------------------------------------------------------------
+%	ARTICLE INFORMATION
+%----------------------------------------------------------------------------------------
+
+\newcommand{\keywordname}{Keywords} % Defines the keywords heading name
+\captionsetup[figure]{name={图}}
+\captionsetup[table]{name={表}}
+\captionsetup{font={small}}
+%\JournalInfo{Journal, Vol. XXI, No. 1, 1-5, 2013} % Journal information
+%\Archive{Additional note} % Additional notes (e.g. copyright, DOI, review/research article)
+
+\input{essay/info} %这是标题，作者和摘要（关键词）
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\flushbottom % Makes all text pages the same height
+
+\maketitle % Print the title and abstract box
+
+%\tableofcontents % Print the contents section
+
+\thispagestyle{empty} % Removes page numbering from the first page
+
+%----------------------------------------------------------------------------------------
+%	ARTICLE CONTENTS
+%----------------------------------------------------------------------------------------
+
+\input{essay/text} %这是正文
+
+%----------------------------------------------------------------------------------------
+%	REFERENCE LIST
+%----------------------------------------------------------------------------------------
+
+\phantomsection
+\small
+\renewcommand\refname{参考文献}
+\bibliographystyle{unsrt}
+\bibliography{essay/ref}
+
+%----------------------------------------------------------------------------------------
+
+\end{document}
